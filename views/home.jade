@@ -1,0 +1,53 @@
+doctype html
+html
+	head
+		title Chat
+		link(rel="stylesheet", href="stylesheets/style.css")
+		script(src='https://code.jquery.com/jquery-1.7.1.min.js')
+		script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js')
+		script(src="javascripts/script.js")
+	body
+		div.container#main
+			div.navbar.navbar-fixed-top
+				div.navbar-inner
+					div.container
+						a.brand(href="#") ChatWithMe
+			div.roomList
+				
+			div.allRooms
+				div.defaultRoom.hidden
+					div.room
+						div.messages
+						div.userList
+					div.row#entries
+						input(type='text', value="this is a message")#messageInput
+						div.btn-group
+							button.btn#submit(data-loading-text="Send") Send
+							button.btn.dropdown-toggle(data-toggle="dropdown")
+								span.caret
+							ul.dropdown-menu
+								li
+									a#edit(href="#modalPseudo", data-toggle="modal")
+										i.icon-user
+										| Change name
+								li
+									a#info(href="#modalInfos", data-toggle="modal")
+										i.icon-info-sign
+										| Infos
+					div#nbUsersDiv
+						p There is 
+							span#nbUsers
+							|  connected user(s).
+					
+	div.modal.fade#modalPseudo
+		div.modal-header
+			h3 Choose a nickname
+		div.modal-body
+			p Choose a nickname :
+			input(type='text', value="doud")#pseudo 
+			p Choose a room :
+			select(multiple)#room
+			div.alert.alert-error.hidden#alertPseudo
+				| This name is already used ! Choose another one.
+		div.modal-footer
+			button.btn.btn-primary#pseudoSubmit Go to the chat
