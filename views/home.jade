@@ -6,6 +6,9 @@ html
 		script(src='https://code.jquery.com/jquery-1.7.1.min.js')
 		script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js')
 		script(src="javascripts/script.js")
+		script(src="/socket.io/socket.io.js")
+		script(src="javascripts/Room.js")
+		script(src="javascripts/realtime.js")
 	body
 		div.container#main
 			div.navbar.navbar-fixed-top
@@ -20,7 +23,7 @@ html
 						div.messages
 						div.userList
 					div.row#entries
-						input(type='text', value="this is a message")#messageInput
+						input(type='text', value="")#messageInput
 						div.btn-group
 							button.btn#submit(data-loading-text="Send") Send
 							button.btn.dropdown-toggle(data-toggle="dropdown")
@@ -44,7 +47,7 @@ html
 			h3 Choose a nickname
 		div.modal-body
 			p Choose a nickname :
-			input(type='text', value="doud")#pseudo 
+			input(type='text', value="")#pseudo 
 			p Choose a room :
 			select(multiple)#room
 			div.alert.alert-error.hidden#alertPseudo

@@ -5,6 +5,8 @@
  */
 
 var app = require('../libs/app');
+var socketio = require("../libs/socket.io.js");
+
 var debug = require('debug')('ChatWithMe:server');
 var http = require('http');
 
@@ -20,7 +22,7 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-
+socketio(server);
 /**
  * Listen on provided port, on all network interfaces.
  */
